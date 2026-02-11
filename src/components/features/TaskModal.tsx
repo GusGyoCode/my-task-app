@@ -7,7 +7,7 @@ import Button from '../ui/Button';
 interface TaskModalProps {
   isOpen: boolean;
   onClose: () => void;
-  taskToEdit?: Task | null; // Si existe, estamos editando
+  taskToEdit?: Task | null;
 }
 
 export default function TaskModal({ isOpen, onClose, taskToEdit }: TaskModalProps) {

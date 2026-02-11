@@ -65,6 +65,12 @@ npm run test:coverage  # Genera reporte detallado de cobertura
 
 - **Middleware de Protección**: Rutas privadas protegidas mediante lógica de servidor.
 
+## 📖 Documentación
+
+- **Estándar de Código:** Se ha utilizado **JSDoc** para documentar la lógica de negocio, servicios y hooks globales.
+
+- **Developer Experience (DX):** Gracias a JSDoc y TypeScript, el proyecto cuenta con un IntelliSense robusto. Basta con pasar el cursor sobre cualquier función o servicio en el editor para ver su documentación técnica y ejemplos de uso.
+
 ## 💡 ¿Qué sigue?
 
 Si tuviera más tiempo para escalar este producto a nivel empresarial, implementaría:

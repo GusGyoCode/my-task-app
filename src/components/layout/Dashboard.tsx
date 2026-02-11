@@ -10,6 +10,16 @@ import { useTaskStore } from "@/store/useTaskStore";
 import { useDebounce } from "@/hooks/useDebounce";
 import { Task } from "@/domain/types";
 
+/**
+ * Componente principal del Dashboard de tareas.
+ * * Gestiona:
+ * - El filtrado y búsqueda de tareas.
+ * - Sincronización bidireccional entre el estado local y los SearchParams de la URL.
+ * - Apertura y cierre del modal de gestión de tareas.
+ * - Estados de carga (Skeletons).
+ * * @component
+ */
+
 export default function DashboardContent() {
 
   const searchParams = useSearchParams();

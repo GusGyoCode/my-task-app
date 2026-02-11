@@ -8,7 +8,6 @@ export default function Sidebar({ updateURLFilter, currentFilter }: { updateURLF
 
   return (
     <>
-      {/* Overlay for mobile/tablet */}
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black/60 z-60 md:hidden backdrop-blur-sm transition-opacity duration-300"
@@ -16,7 +15,6 @@ export default function Sidebar({ updateURLFilter, currentFilter }: { updateURLF
         />
       )}
 
-      {/* Sidebar / Drawer */}
       <aside
         className={`fixed md:sticky top-0 left-0 z-70 w-[280px] h-screen bg-[#111714] px-8 pb-3 pt-6 flex flex-col gap-6 text-white overflow-y-auto style_main__1l transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
           }`}
@@ -28,7 +26,6 @@ export default function Sidebar({ updateURLFilter, currentFilter }: { updateURLF
             </div>
             <span>Task Pro</span>
           </div>
-          {/* Close button for mobile */}
           <button
             onClick={() => setSidebarOpen(false)}
             className="md:hidden p-2 text-white hover:bg-[#29382F] rounded-lg transition-colors cursor-pointer"
@@ -40,7 +37,6 @@ export default function Sidebar({ updateURLFilter, currentFilter }: { updateURLF
         <span className="text-sm font-medium uppercase tracking-wider">
           Filtros activos
         </span>
-        {/* Origen */}
         <div className="flex flex-col gap-3">
           <span className="text-sm text-[#36E27B]/60 font-medium tracking-wide">Estatus</span>
           {[
@@ -53,7 +49,7 @@ export default function Sidebar({ updateURLFilter, currentFilter }: { updateURLF
               key={origen.value}
               onClick={() => {
                 updateURLFilter(origen.value);
-                setSidebarOpen(false); // Close on selection for mobile
+                setSidebarOpen(false);
               }}
               className={`flex items-center justify-between px-3 w-full h-[56px] rounded-lg cursor-pointer bg-[#152B1E] transition-all hover:bg-[#1E3A28] ${(currentFilter ?? "") === origen.value ? "border-[#36E27B] border bg-[#1E3A28]" : ""}`}
             >
