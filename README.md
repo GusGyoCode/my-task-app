@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 TaskPro - Senior Technical Assessment
 
-## Getting Started
+Una solución robusta para la gestión de tareas, construida con un enfoque en escalabilidad, mantenibilidad y experiencia de usuario (UX). Este proyecto demuestra la implementación de patrones avanzados en el ecosistema moderno de React.
 
-First, run the development server:
+## 🧠 Decisiones de Arquitectura y Diseño
+
+El proyecto no es solo una "To-Do List"; es una implementación de Clean Architecture adaptada a Frontend:
+
+- **Domain-Driven Design (DDD) Lite**: Separación clara entre los tipos de dominio, servicios de infraestructura (Storage) y la capa de presentación.
+
+- **S.O.L.I.D. Principles**: \* Responsabilidad Única: Cada componente y hook tiene una única razón para cambiar.
+  - Inversión de Dependencias: Los componentes dependen de abstracciones (interfaces de servicios), no de implementaciones concretas.
+
+- **Store Pattern con Zustand**: Se eligió Zustand por su bajo boilerplate y excelente rendimiento en comparación con Redux, manteniendo un estado global atómico y predecible.
+
+- **Persistencia Asíncrona**: El servicio de tareas simula latencia de red real mediante Promises y async/await, permitiendo demostrar estados de loading y skeletons de carga profesionales.
+
+## 🛠️ Stack Tecnológico
+
+- **Next.js (App Router)**: Aprovechando `Suspense boundaries` para optimizar el renderizado y evitar bloqueos en el cliente.
+
+- **TypeScript**: Tipado estricto en toda la aplicación para reducir errores en tiempo de ejecución.
+
+- **Tailwind CSS + Lucide Icons**: Diseño UI minimalista, responsivo y de alto contraste.
+
+- **Jest + React Testing Library**: Suite de pruebas con enfoque en **Testing Pyramid** (Pruebas unitarias de lógica y pruebas de integración de componentes).
+
+## 🧪 Calidad de Software (Testing)
+
+Se ha priorizado la cobertura de la lógica de negocio y los flujos críticos (Auth y CRUD).
+
+- **Cobertura de Código**: >75% (Objetivo del reto superado).
+
+- **Comandos**:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run test           # Ejecuta la suite completa
+npm run test:coverage  # Genera reporte detallado de cobertura
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Instalación y Configuración
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Clonado**: git clone ...
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Dependencias**: npm install
 
-## Learn More
+- **Entorno**: npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+- **Producción**: npm run build (Optimizado con Suspense Boundaries para prerendering).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Nota de Acceso**: La aplicación implementa un flujo de autenticación mediante un Mock JWT. Al iniciar sesión, se genera un token simetrizado que se persiste en `cookies` y `localStorage` para permitir la persistencia de sesión a través del Middleware de Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📈 Características Senior Implementadas
 
-## Deploy on Vercel
+- **Debouncing en Búsqueda**: Optimización de filtrado en tiempo real para evitar renders innecesarios.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Sincronización de URL (Search Params)**: Los filtros y búsquedas son persistentes; puedes recargar la página y mantener tu vista actual (Deep Linking).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Manejo de Estados de Hidratación**: Control de errores de desincronización entre Servidor y Cliente.
+
+- **Middleware de Protección**: Rutas privadas protegidas mediante lógica de servidor.
+
+## 💡 ¿Qué sigue?
+
+Si tuviera más tiempo para escalar este producto a nivel empresarial, implementaría:
+
+- **React Query**: Para manejo de caché de servidor real.
+
+- **Playwright**: Para pruebas End-to-End (E2E) del flujo de usuario completo.
+
+- **Atomic Design**: Mayor granularidad en la carpeta de componentes.
