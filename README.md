@@ -2,6 +2,11 @@
 
 Una solución robusta para la gestión de tareas, construida con un enfoque en escalabilidad, mantenibilidad y experiencia de usuario (UX). Este proyecto demuestra la implementación de patrones avanzados en el ecosistema moderno de React.
 
+## 🚀 Demo
+
+- **URL en vivo:** [https://my-task-app-zeta.vercel.app/](https://my-task-app-zeta.vercel.app/)
+- **Credenciales de prueba:** `admin@seek.com` / `seek`
+
 ## 🧠 Decisiones de Arquitectura y Diseño
 
 El proyecto no es solo una "To-Do List"; es una implementación de Clean Architecture adaptada a Frontend:
